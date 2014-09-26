@@ -28,7 +28,7 @@ end
 def create
   @book = Book.new(book_params)
   if @book.save
-    redirect_to @book
+    redirect_to @book, notice: "#{@book.title} was created!"
   else
     render :new
   end
